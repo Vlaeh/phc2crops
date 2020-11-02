@@ -7,13 +7,15 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraftforge.event.RegistryEvent;
 import pam.pamhc2crops.Pamhc2crops;
 import pam.pamhc2crops.config.ChanceConfig;
 import pam.pamhc2crops.worldgen.configs.FeatureConfigs;
 
 public class FeatureRegistry {
 
-	/*public static ConfiguredFeature<?, ?> ARID_GARDEN = newConfiguredFeature("arid_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.ARID_GARDEN_CONFIG)
+	public static ConfiguredFeature<?, ?> ARID_GARDEN = newConfiguredFeature("arid_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.ARID_GARDEN_CONFIG)
     		.withPlacement(Features.Placements.HEIGHTMAP_SPREAD_DOUBLE_PLACEMENT).func_242729_a(ChanceConfig.garden_chance.get()));
 	
 	public static ConfiguredFeature<?, ?> FROST_GARDEN = newConfiguredFeature("frost_garden", Feature.RANDOM_PATCH.withConfiguration(FeatureConfigs.FROST_GARDEN_CONFIG)
@@ -36,7 +38,7 @@ public class FeatureRegistry {
         return configuredFeature;
     }
 	
-	public static void registerConfiguredFeatures() {
+	public static void registerConfiguredFeatures(RegistryEvent.Register<Feature<?>> event) {
         MutableRegistry<ConfiguredFeature<?, ?>> registry = (MutableRegistry<ConfiguredFeature<?, ?>>) WorldGenRegistries.CONFIGURED_FEATURE;
         
         Registry.register(registry, new ResourceLocation(Pamhc2crops.MOD_ID, "arid_garden"), ARID_GARDEN);
@@ -48,5 +50,5 @@ public class FeatureRegistry {
         Registry.register(registry, new ResourceLocation(Pamhc2crops.MOD_ID, "windy_garden"), WINDY_GARDEN);
         
         
-	} */
+	}
 }
